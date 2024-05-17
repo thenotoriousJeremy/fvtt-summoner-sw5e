@@ -141,7 +141,7 @@ export class SummonsActor {
         }],
         disabled: false,
         icon: "icons/skills/targeting/crosshair-bars-yellow.webp",
-        label: game.i18n.localize("DND5E.Proficiency")
+        label: game.i18n.localize("SW5E.Proficiency")
       }, { parent: this });
       updates.embedded.ActiveEffect = {
         [proficiencyEffect[game.release.generation > 10 ? "name" : "label"]]: proficiencyEffect.toObject()
@@ -150,11 +150,11 @@ export class SummonsActor {
     }
 
     // Apply AC formula
-    const ac = dnd5e.utils.simplifyBonus(config.acFormula, rollData)
+    const ac = SW5e.utils.simplifyBonus(config.acFormula, rollData)
     if ( ac ) updates.actor["system.attributes.ac.flat"] = ac;
 
     // Apply HP formula
-    const hp = dnd5e.utils.simplifyBonus(config.hpFormula, rollData);
+    const hp = SW5e.utils.simplifyBonus(config.hpFormula, rollData);
     if ( hp ) {
       updates.actor["system.attributes.hp.max"] = hp;
       updates.actor["system.attributes.hp.value"] = hp;
@@ -162,7 +162,7 @@ export class SummonsActor {
 
     // Apply other actor data changes
     for ( const change of config.actorChanges ?? [] ) {
-      const value = dnd5e.utils.simplifyBonus(change.value, rollData);
+      const value = SW5e.utils.simplifyBonus(change.value, rollData);
       clone.updateSource({ [change.key]: value });
       updates.actor[change.key] = value;
     }
@@ -258,7 +258,7 @@ export class SummonsActor {
 
     rollData.summoner = summoner.data;
     if ( rollData.summoner.prof ) {
-      rollData.summoner.prof = new dnd5e.documents.Proficiency(
+      rollData.summoner.prof = new SW5e.documents.Proficiency(
         rollData.summoner.prof._baseProficiency,
         rollData.summoner.prof.multiplier,
         rollData.summoner.prof.rounding === "down"
