@@ -1,7 +1,7 @@
 {
   "id": "arbron-summoner",
   "title": "Arbron’s Summoning",
-  "description": "Easy to use interface for configuring and summoning actors within DnD5e.",
+  "description": "Easy to use interface for configuring and summoning actors within SW5e.",
   "authors": [
     {
       "name": "Jeff ‘Arbron’ Hitchcock",
@@ -26,8 +26,8 @@
   "relationships": {
     "systems": [
       {
-        "id": "dnd5e",
-        "manifest": "https://raw.githubusercontent.com/foundryvtt/dnd5e/master/system.json",
+        "id": "SW5e",
+        "manifest": "https://raw.githubusercontent.com/foundryvtt/SW5e/master/system.json",
         "compatibility": {
           "minimum": "2.0.0",
           "verified": "3.0"
@@ -87,7 +87,7 @@
     {
       "name": "instructions",
       "label": "Arbron’s Summoner",
-      "system": "dnd5e",
+      "system": "SW5e",
       "path": "./packs/instructions.db",
       "type": "JournalEntry"
     }
