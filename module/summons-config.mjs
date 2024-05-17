@@ -18,7 +18,7 @@ export class SummonsConfig extends FormApplication {
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["dnd5e", "arbron-summons-config"],
+      classes: ["SW5e", "arbron-summons-config"],
       template: "modules/arbron-summoner/templates/summons-config.hbs",
       width: 500,
       height: "auto"
