@@ -27,10 +27,10 @@
     "systems": [
       {
         "id": "SW5e",
-        "manifest": "https://raw.githubusercontent.com/foundryvtt/SW5e/master/system.json",
+        "manifest": "https://raw.githubusercontent.com/sw5e-foundry/sw5e/master/static/system.json",
         "compatibility": {
           "minimum": "2.0.0",
-          "verified": "3.0"
+          "verified": "2.0"
         }
       }
     ],
