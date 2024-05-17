@@ -4,9 +4,9 @@ import { SummonsItem } from "./module/summons-item.mjs";
 
 
 Hooks.once("init", function() {
-  // Patch DND5E.itemActionTypes to include new summon action
+  // Patch SW5E.itemActionTypes to include new summon action
   insertIntoObject("summon", "ArbronSummoner.Summoning", {
-    target: CONFIG.DND5E, keyPath: "itemActionTypes",
+    target: CONFIG.SW5E, keyPath: "itemActionTypes",
     after: "save", before: "heal"
   });
 });
@@ -63,10 +63,10 @@ Hooks.on("tidy5e-sheet.ready", (api) => {
 });
 
 // Item Rolling & Chat Message Hooks
-Hooks.on("dnd5e.preUseItem", SummonsItem.preUseItem);
-Hooks.on("dnd5e.itemUsageConsumption", SummonsItem.itemUsageConsumption);
-Hooks.on("dnd5e.preDisplayCard", SummonsItem.preDisplayCard);
-Hooks.on("dnd5e.useItem", SummonsItem.useItem);
+Hooks.on("SW5e.preUseItem", SummonsItem.preUseItem);
+Hooks.on("SW5e.itemUsageConsumption", SummonsItem.itemUsageConsumption);
+Hooks.on("SW5e.preDisplayCard", SummonsItem.preDisplayCard);
+Hooks.on("SW5e.useItem", SummonsItem.useItem);
 Hooks.on("renderAbilityUseDialog", SummonsItem.renderAbilityUseDialog);
 Hooks.on("renderChatMessage", SummonsItem.renderChatMessage);
 
