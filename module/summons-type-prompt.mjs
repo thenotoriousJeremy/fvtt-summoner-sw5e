@@ -27,7 +27,7 @@ export async function promptSummonsType(summons) {
         }
       },
       default: "summon"
-    }, { classes: ["dnd5e", "dialog"], jQuery: false });
+    }, { classes: ["SW5e", "dialog"], jQuery: false });
     dialog.render(true);
   });
 }
